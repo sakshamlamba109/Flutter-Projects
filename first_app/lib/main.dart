@@ -73,12 +73,9 @@ class _Random_WordsState extends State<Random_Words> {
 
   Widget _buildRow(WordPair pair) {
     return ListTile(
-      title: Transform.rotate(
-        angle: 0.2,
-        child: Text(
-          pair.asPascalCase,
-          style: _biggerFont,
-        ),
+      title: Text(
+        pair.asPascalCase,
+        style: _biggerFont,
       ),
     );
   }
