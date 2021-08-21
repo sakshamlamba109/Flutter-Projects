@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() => runApp(PersonalityChecker());
 
@@ -6,18 +7,18 @@ class PersonalityChecker extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return PersonalityCheckerState();
+    return _PersonalityCheckerState();
   }
 }
 
-class PersonalityCheckerState extends State<PersonalityChecker> {
-  var questionIndex = 0;
-  void answerQuestions() {
+class _PersonalityCheckerState extends State<PersonalityChecker> {
+  var _questionIndex = 0;
+  void _answerQuestions() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
 
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   var questions = [
@@ -33,17 +34,17 @@ class PersonalityCheckerState extends State<PersonalityChecker> {
         ),
         body: Column(
           children: [
-            Text(questions.elementAt(questionIndex)),
+            Question(questions.elementAt(_questionIndex)),
             ElevatedButton(
-              onPressed: answerQuestions,
+              onPressed: _answerQuestions,
               child: Text('Answer 1'),
             ),
             ElevatedButton(
-              onPressed: answerQuestions,
+              onPressed: _answerQuestions,
               child: Text('Answer 2'),
             ),
             ElevatedButton(
-              onPressed: answerQuestions,
+              onPressed: _answerQuestions,
               child: Text('Answer 3'),
             ),
           ],
