@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 void main() => runApp(PersonalityChecker());
 
@@ -35,18 +36,9 @@ class _PersonalityCheckerState extends State<PersonalityChecker> {
         body: Column(
           children: [
             Question(questions.elementAt(_questionIndex)),
-            ElevatedButton(
-              onPressed: _answerQuestions,
-              child: Text('Answer 1'),
-            ),
-            ElevatedButton(
-              onPressed: _answerQuestions,
-              child: Text('Answer 2'),
-            ),
-            ElevatedButton(
-              onPressed: _answerQuestions,
-              child: Text('Answer 3'),
-            ),
+            Answer(_answerQuestions),
+            Answer(_answerQuestions),
+            Answer(_answerQuestions),
           ],
         ),
         backgroundColor: Colors.white,
